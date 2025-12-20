@@ -1,0 +1,4 @@
+user: "adminuser"
+password: "adminpass"
+serial_port: "/dev/ttyUSB1"
+baudrate: 9600

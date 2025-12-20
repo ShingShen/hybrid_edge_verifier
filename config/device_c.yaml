@@ -1,0 +1,4 @@
+user: "user"
+password: "userpass"
+serial_port: "/dev/ttyUSB2"
+baudrate: 9600
