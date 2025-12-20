@@ -1,0 +1,4 @@
+user: "pi"
+password: "raspberry"
+serial_port: "/dev/ttyUSB0"
+baudrate: 115200
