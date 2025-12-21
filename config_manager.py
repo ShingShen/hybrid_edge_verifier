@@ -11,6 +11,7 @@ class ConfigManager:
 
     def __init__(self, config_dir="config"):
         self.config_dir = config_dir
+        self.config = {}
         self.load_device_config()
 
     def load_device_config(device_name):

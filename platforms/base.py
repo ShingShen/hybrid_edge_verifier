@@ -7,6 +7,10 @@ class Platform(ABC):
         self.password = config.get('password')
 
     @abstractmethod
+    def http_connection(self):
+        pass
+
+    @abstractmethod
     def ssh_connection(self):
         pass
 

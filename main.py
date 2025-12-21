@@ -23,6 +23,14 @@ def main():
     parser = argparse.ArgumentParser(description="")
     parser.add_argument("--device", help="load the special device config")
 
+    # Connection parameters
+    parser.add_argument(
+        "--connection",
+        choices=[
+            'http','ssh', 'telnet', 'serial'
+        ]
+    )
+
     args = parser.parse_args()
 
     current_script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -35,5 +43,31 @@ def main():
         except FileNotFoundError as e:
             print(f"[!] Error: {e}")
             sys.exit(1)
+    else:
+        print("[*] Do not assign device.")
+
+    results = []
+    connection_to_run = set()
+    if args.connection:
+        connection_to_run.update(args.connection)
+
+    platform_instance = None
+    if args.device:
+        try:
+            platform_instance = get_platform_instance(args.device, cm.config.copy())
+        except ValueError as e:
+            print(f"[!] Error: Cannot  build platform instance - {e}.")
+            platform_instance = None
+
+    try:
+        if connection_to_run:
+            if 'http' in connection_to_run:
+                if platform_instance:
+                    results.append(platform_instance.http_connection())
+    except KeyboardInterrupt:
+        print("\n[*] The execution is stop.\n")
+    except Exception as e:
+        print(f"[!] Unexpected Error: {e}\n")
+
 if __name__ == "__main__":
     main()
