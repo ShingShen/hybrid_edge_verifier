@@ -2,3 +2,4 @@ user: "adminuser"
 password: "adminpass"
 serial_port: "/dev/ttyUSB1"
 baudrate: 9600
+ip: "0.0.0.0"
