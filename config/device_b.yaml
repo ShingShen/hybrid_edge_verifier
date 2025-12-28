@@ -1,5 +1,5 @@
-user: "adminuser"
-password: "adminpass"
+user: "root"
+password: "password"
 serial_port: "/dev/ttyUSB1"
 baudrate: 9600
-ip: "0.0.0.0"
+ip: "172.25.0.149"

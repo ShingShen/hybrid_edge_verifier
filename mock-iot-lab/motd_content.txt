@@ -1,0 +1,8 @@
+Linux iot-device 4.14.98-v7 #1 SMP Tue Oct 1 14:47:58 CST 2019 armv7l
+================================================================================
+  [VIRTUAL IOT LAB] - SIMULATED DEVICE
+  Services: SSH (22), Telnet (23), HTTP (80), Serial-over-TCP (9000)
+================================================================================
+This is a simulated IoT environment for automation testing.
+Authentication: root / password
+Note: This is a virtual container, not a physical hardware device.

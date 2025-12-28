@@ -1,0 +1,417 @@
+version: '3.8'
+services:
+  dut-1:
+    build: .
+    container_name: dut-1
+    hostname: dut-1
+    networks:
+      iot-net:
+        ipv4_address: 172.25.0.101
+    restart: always
+  dut-2:
+    build: .
+    container_name: dut-2
+    hostname: dut-2
+    networks:
+      iot-net:
+        ipv4_address: 172.25.0.102
+    restart: always
+  dut-3:
+    build: .
+    container_name: dut-3
+    hostname: dut-3
+    networks:
+      iot-net:
+        ipv4_address: 172.25.0.103
+    restart: always
+  dut-4:
+    build: .
+    container_name: dut-4
+    hostname: dut-4
+    networks:
+      iot-net:
+        ipv4_address: 172.25.0.104
+    restart: always
+  dut-5:
+    build: .
+    container_name: dut-5
+    hostname: dut-5
+    networks:
+      iot-net:
+        ipv4_address: 172.25.0.105
+    restart: always
+  dut-6:
+    build: .
+    container_name: dut-6
+    hostname: dut-6
+    networks:
+      iot-net:
+        ipv4_address: 172.25.0.106
+    restart: always
+  dut-7:
+    build: .
+    container_name: dut-7
+    hostname: dut-7
+    networks:
+      iot-net:
+        ipv4_address: 172.25.0.107
+    restart: always
+  dut-8:
+    build: .
+    container_name: dut-8
+    hostname: dut-8
+    networks:
+      iot-net:
+        ipv4_address: 172.25.0.108
+    restart: always
+  dut-9:
+    build: .
+    container_name: dut-9
+    hostname: dut-9
+    networks:
+      iot-net:
+        ipv4_address: 172.25.0.109
+    restart: always
+  dut-10:
+    build: .
+    container_name: dut-10
+    hostname: dut-10
+    networks:
+      iot-net:
+        ipv4_address: 172.25.0.110
+    restart: always
+  dut-11:
+    build: .
+    container_name: dut-11
+    hostname: dut-11
+    networks:
+      iot-net:
+        ipv4_address: 172.25.0.111
+    restart: always
+  dut-12:
+    build: .
+    container_name: dut-12
+    hostname: dut-12
+    networks:
+      iot-net:
+        ipv4_address: 172.25.0.112
+    restart: always
+  dut-13:
+    build: .
+    container_name: dut-13
+    hostname: dut-13
+    networks:
+      iot-net:
+        ipv4_address: 172.25.0.113
+    restart: always
+  dut-14:
+    build: .
+    container_name: dut-14
+    hostname: dut-14
+    networks:
+      iot-net:
+        ipv4_address: 172.25.0.114
+    restart: always
+  dut-15:
+    build: .
+    container_name: dut-15
+    hostname: dut-15
+    networks:
+      iot-net:
+        ipv4_address: 172.25.0.115
+    restart: always
+  dut-16:
+    build: .
+    container_name: dut-16
+    hostname: dut-16
+    networks:
+      iot-net:
+        ipv4_address: 172.25.0.116
+    restart: always
+  dut-17:
+    build: .
+    container_name: dut-17
+    hostname: dut-17
+    networks:
+      iot-net:
+        ipv4_address: 172.25.0.117
+    restart: always
+  dut-18:
+    build: .
+    container_name: dut-18
+    hostname: dut-18
+    networks:
+      iot-net:
+        ipv4_address: 172.25.0.118
+    restart: always
+  dut-19:
+    build: .
+    container_name: dut-19
+    hostname: dut-19
+    networks:
+      iot-net:
+        ipv4_address: 172.25.0.119
+    restart: always
+  dut-20:
+    build: .
+    container_name: dut-20
+    hostname: dut-20
+    networks:
+      iot-net:
+        ipv4_address: 172.25.0.120
+    restart: always
+  dut-21:
+    build: .
+    container_name: dut-21
+    hostname: dut-21
+    networks:
+      iot-net:
+        ipv4_address: 172.25.0.121
+    restart: always
+  dut-22:
+    build: .
+    container_name: dut-22
+    hostname: dut-22
+    networks:
+      iot-net:
+        ipv4_address: 172.25.0.122
+    restart: always
+  dut-23:
+    build: .
+    container_name: dut-23
+    hostname: dut-23
+    networks:
+      iot-net:
+        ipv4_address: 172.25.0.123
+    restart: always
+  dut-24:
+    build: .
+    container_name: dut-24
+    hostname: dut-24
+    networks:
+      iot-net:
+        ipv4_address: 172.25.0.124
+    restart: always
+  dut-25:
+    build: .
+    container_name: dut-25
+    hostname: dut-25
+    networks:
+      iot-net:
+        ipv4_address: 172.25.0.125
+    restart: always
+  dut-26:
+    build: .
+    container_name: dut-26
+    hostname: dut-26
+    networks:
+      iot-net:
+        ipv4_address: 172.25.0.126
+    restart: always
+  dut-27:
+    build: .
+    container_name: dut-27
+    hostname: dut-27
+    networks:
+      iot-net:
+        ipv4_address: 172.25.0.127
+    restart: always
+  dut-28:
+    build: .
+    container_name: dut-28
+    hostname: dut-28
+    networks:
+      iot-net:
+        ipv4_address: 172.25.0.128
+    restart: always
+  dut-29:
+    build: .
+    container_name: dut-29
+    hostname: dut-29
+    networks:
+      iot-net:
+        ipv4_address: 172.25.0.129
+    restart: always
+  dut-30:
+    build: .
+    container_name: dut-30
+    hostname: dut-30
+    networks:
+      iot-net:
+        ipv4_address: 172.25.0.130
+    restart: always
+  dut-31:
+    build: .
+    container_name: dut-31
+    hostname: dut-31
+    networks:
+      iot-net:
+        ipv4_address: 172.25.0.131
+    restart: always
+  dut-32:
+    build: .
+    container_name: dut-32
+    hostname: dut-32
+    networks:
+      iot-net:
+        ipv4_address: 172.25.0.132
+    restart: always
+  dut-33:
+    build: .
+    container_name: dut-33
+    hostname: dut-33
+    networks:
+      iot-net:
+        ipv4_address: 172.25.0.133
+    restart: always
+  dut-34:
+    build: .
+    container_name: dut-34
+    hostname: dut-34
+    networks:
+      iot-net:
+        ipv4_address: 172.25.0.134
+    restart: always
+  dut-35:
+    build: .
+    container_name: dut-35
+    hostname: dut-35
+    networks:
+      iot-net:
+        ipv4_address: 172.25.0.135
+    restart: always
+  dut-36:
+    build: .
+    container_name: dut-36
+    hostname: dut-36
+    networks:
+      iot-net:
+        ipv4_address: 172.25.0.136
+    restart: always
+  dut-37:
+    build: .
+    container_name: dut-37
+    hostname: dut-37
+    networks:
+      iot-net:
+        ipv4_address: 172.25.0.137
+    restart: always
+  dut-38:
+    build: .
+    container_name: dut-38
+    hostname: dut-38
+    networks:
+      iot-net:
+        ipv4_address: 172.25.0.138
+    restart: always
+  dut-39:
+    build: .
+    container_name: dut-39
+    hostname: dut-39
+    networks:
+      iot-net:
+        ipv4_address: 172.25.0.139
+    restart: always
+  dut-40:
+    build: .
+    container_name: dut-40
+    hostname: dut-40
+    networks:
+      iot-net:
+        ipv4_address: 172.25.0.140
+    restart: always
+  dut-41:
+    build: .
+    container_name: dut-41
+    hostname: dut-41
+    networks:
+      iot-net:
+        ipv4_address: 172.25.0.141
+    restart: always
+  dut-42:
+    build: .
+    container_name: dut-42
+    hostname: dut-42
+    networks:
+      iot-net:
+        ipv4_address: 172.25.0.142
+    restart: always
+  dut-43:
+    build: .
+    container_name: dut-43
+    hostname: dut-43
+    networks:
+      iot-net:
+        ipv4_address: 172.25.0.143
+    restart: always
+  dut-44:
+    build: .
+    container_name: dut-44
+    hostname: dut-44
+    networks:
+      iot-net:
+        ipv4_address: 172.25.0.144
+    restart: always
+  dut-45:
+    build: .
+    container_name: dut-45
+    hostname: dut-45
+    networks:
+      iot-net:
+        ipv4_address: 172.25.0.145
+    restart: always
+  dut-46:
+    build: .
+    container_name: dut-46
+    hostname: dut-46
+    networks:
+      iot-net:
+        ipv4_address: 172.25.0.146
+    restart: always
+  dut-47:
+    build: .
+    container_name: dut-47
+    hostname: dut-47
+    networks:
+      iot-net:
+        ipv4_address: 172.25.0.147
+    restart: always
+  dut-48:
+    build: .
+    container_name: dut-48
+    hostname: dut-48
+    networks:
+      iot-net:
+        ipv4_address: 172.25.0.148
+    restart: always
+  dut-49:
+    build: .
+    container_name: dut-49
+    hostname: dut-49
+    networks:
+      iot-net:
+        ipv4_address: 172.25.0.149
+    restart: always
+  dut-50:
+    build: .
+    container_name: dut-50
+    hostname: dut-50
+    networks:
+      iot-net:
+        ipv4_address: 172.25.0.150
+    restart: always
+  test-runner:
+    image: python:3.9-slim
+    container_name: test-runner
+    tty: true
+    networks:
+      iot-net:
+        ipv4_address: 172.25.0.200
+    command: sh -c 'pip install pytest paramiko requests telnetlib3 && tail -f /dev/null'
+networks:
+  iot-net:
+    driver: bridge
+    ipam:
+      config:
+      - subnet: 172.25.0.0/16
+        gateway: 172.25.0.1

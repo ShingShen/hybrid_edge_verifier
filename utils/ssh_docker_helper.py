@@ -207,8 +207,10 @@ expect eof
     project_root_docker = project_root.replace('\\', '/')
     temp_dir_docker = temp_dir.replace('\\', '/')
 
+    docker_network_name = "mock-iot-lab_iot-net" 
     docker_command = [
         "docker", "run", "--rm", "-i",
+        "--network", docker_network_name,
         "-v", f"{project_root_docker}:/usr/src/app",
         # Mount the temp dir to make the script accessible
         "-v", f"{temp_dir_docker}:{temp_dir_docker}",
