@@ -104,7 +104,7 @@ int start_serial_terminal(const char *device, int baudrate) {
 
         int ret = select(max_fd + 1, &readfds, NULL, NULL, NULL);
         if (ret < 0) {
-            if (errno == EINTR) continue; // rery if the signal is interrupted.
+            if (errno == EINTR) continue; // retry if the signal is interrupted.
             perror("C Error: select");
             ret_code = -5;
             break;
@@ -117,7 +117,7 @@ int start_serial_terminal(const char *device, int baudrate) {
             int len = read(serial_fd, buf, sizeof(buf) - 1);
             if (len > 0) {
                 buf[len] = '\0'; // Although 'write' is not nessassary，it is a good habit.
-                if (write(STDOUT_FILENO, buf, len) < 0) { /* handle error if needed */ }
+                // if (write(STDOUT_FILENO, buf, len) < 0) { /* handle error if needed */ }
             } else {
                 // Serial device may be unplugged
                 fprintf(stderr, "\nSerial device disconnected.\n");
