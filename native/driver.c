@@ -112,14 +112,22 @@ int start_serial_terminal(const char *device, int baudrate) {
             break;
         }
 
-        // Read Serial -> Write STDOUT
+        // Read Serial -> Write STDOUT(Screen)
         if (FD_ISSET(serial_fd, &readfds)) {
             char buf[256];
             // Fix: prestore space for '\0'，to prevent from overflow
             int len = read(serial_fd, buf, sizeof(buf) - 1);
             if (len > 0) {
                 buf[len] = '\0'; // Although 'write' is not nessassary，it is a good habit.
-                // if (write(STDOUT_FILENO, buf, len) < 0) { /* handle error if needed */ }
+                if (write(STDOUT_FILENO, buf, len) < 0) { 
+                    if (errno == EINTR || errno == EAGAIN) {
+                        // EINTR: signal Interrupted
+                        // EAGAIN: buffer is full
+                    } else {
+                        perror("C Error: Write to STDOUT(Screen) failed.");
+                        break;
+                    }
+                 }
             } else {
                 // Serial device may be unplugged
                 fprintf(stderr, "\nSerial device disconnected.\n");
@@ -127,7 +135,7 @@ int start_serial_terminal(const char *device, int baudrate) {
             }
         }
 
-        // Read STDIN -> Write Serial
+        // Read STDIN(Keyboard) -> Write Serial
         if (FD_ISSET(STDIN_FILENO, &readfds)) {
             char ch;
             int len = read(STDIN_FILENO, &ch, 1);
@@ -135,7 +143,16 @@ int start_serial_terminal(const char *device, int baudrate) {
                 // if (ch == 1) break; 
                 
                 if (ch == '\n') ch = '\r';
-                if (write(serial_fd, &ch, 1) < 0) { /* handle error */ }
+                if (write(serial_fd, &ch, 1) < 0) { 
+                    if (errno == EAGAIN || errno == EWOULDBLOCK) {
+                        fprintf(stderr, "Buffer full, dropped char.\n");
+                    } else if (errno == EINTR) {
+
+                    } else {
+                        fprintf(stderr, "\nWrite failed: %s\n", strerror(errno));
+                        break;
+                    }
+                }
             }
         }
     }

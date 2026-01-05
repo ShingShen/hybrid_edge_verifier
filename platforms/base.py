@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+from ruserial import start_serial
 from utils.ssh_docker_helper import run_ssh_command_with_expect
 
 class Platform(ABC):
@@ -7,6 +8,8 @@ class Platform(ABC):
         self.ip = config.get('ip')
         self.user = config.get('user')
         self.password = config.get('password')
+        self.dev = config.get('serial_port')
+        self.baud = config.get('baudrate')
 
     # @abstractmethod
     # def http_connection(self):
@@ -23,6 +26,9 @@ class Platform(ABC):
     # @abstractmethod
     # def serial_connection(self):
     #     pass
+
+    def serial_term(self):
+        start_serial(self.dev, self.baud)
 
     def _run_ssh_command(self, command: str) -> tuple[bool, str]:
         return run_ssh_command_with_expect(self.config, command)
